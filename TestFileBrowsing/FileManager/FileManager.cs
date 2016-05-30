@@ -89,14 +89,14 @@ namespace TestFileBrowsing.FileManagerHelper
                     {
                         middle++;
                     }
-                    else if (fileInfo.Length < 50485760)
+                    else if (fileInfo.Length > 100485760)
                     {
                         big++;
                     }
                 }
                 result[0] = small;
                 result[1] = middle;
-                result[2] = small;
+                result[2] = big;
             }
 
             return result;
