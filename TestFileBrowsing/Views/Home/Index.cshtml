@@ -1,0 +1,48 @@
+﻿<div class="row">
+
+    <div ng-controller="mainCtrl" data-ng-cloak>
+        <div class="alert alert-info" role="alert">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <h2>Less 10mb</h2>
+                        </th>
+                        <th>
+                            <h2> 10mb - 50mb</h2>
+                        </th>
+                        <th>
+                            <h2>More 100mb</h2>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><h4>{{count[0]}}</h4></td>
+                        <td><h4>{{count[1]}}</h4></td>
+                        <td><h4>{{count[2]}}</h4></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Directories</h2>
+            <ul data-ng-repeat="drive in drives" class="nav nav-pills">
+                <li role="presentation"><a href="#" data-path='{{drive}}' data-ng-click="ShowFolders($event)">{{ drive }}</a></li>
+            </ul>
+        </div>
+        <div data-ng-show="cuurPath" style="height: 600px; overflow:scroll" class="col-md-8">
+            <h2>Current path: {{ cuurPath }}</h2>
+            <ul data-ng-repeat="folder in folders">
+                <li><a href="#" data-path='{{folder}}' data-ng-click="ShowFolders($event);">{{ folder }}</a></li>
+            </ul>
+            <ul data-ng-repeat="file in files">
+                <li><a href="#">{{ file }}</a></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
